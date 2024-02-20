@@ -44,8 +44,9 @@ To run the website locally on your machine, follow these steps:
 
 1. Clone the repository to your local machine:
 
-   ```bash
-   git clone https://github.com/John-Akech/Resume-Site.git
+   git clone git@github.com:John-Akech/Resume-Site.git
+
+   
 Navigate to the project directory:
 
 cd your_repository
