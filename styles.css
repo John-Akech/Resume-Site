@@ -14,18 +14,15 @@ body {
 }
 
 /* Header styles */
-
-/* Define the initial and new background images */
 .header-content {
     background-image: url('./cp2.jpg'); /* Initial background image */
     background-size: cover;
     background-position: center;
     height: 300px; /* Adjust height as needed */
-    transition: background-image 0.2.5s ease; /* Transition for background image change */
+    transition: background-image 0.2s ease; /* corrected transition property value */
     position: relative; /* Added position relative */
 }
 
-/* Define styles for the profile picture and name */
 .profile-pic {
     text-align: right;
     padding-top: 50px; /* Adjust as needed */
@@ -40,7 +37,6 @@ body {
     margin-top: 50px; /* Adjust as needed */
 }
 
-/* Define the new background image on hover */
 .header-content:hover {
     background-image: url('./cp.jpg'); /* New background image on hover */
 }
@@ -100,12 +96,15 @@ footer {
     background-color: #06fbf3;
     color: #fff;
     padding: 20px;
-    text-align: center;
-    font-size: 14px;
+    text-align: center; /* Center align text */
+    font-size: 18px; /* Increase font size */
+    white-space: nowrap; /* Prevent text from wrapping */
+    position: fixed; /* Position the footer */
+    bottom: 0; /* Align the footer to the bottom */
+    width: 100%; /* Make the footer full width */
 }
 
 /* Custom styles */
-/* Profile picture styles */
 .profile-pic {
     text-align: center;
     margin-bottom: 20px; /* Add margin to separate from other content */
@@ -124,7 +123,6 @@ footer {
 }
 
 /* Inserted styles for the "Welcome!!!" heading animation */
-
 @keyframes rainbowColor {
     0% { color: red; }
     14.28% { color: orange; }
@@ -136,47 +134,35 @@ footer {
     100% { color: red; }
 }
 
-#home {
-    position: relative;
-    overflow: visible;
-    text-align: center;
-    justify-self: flex-start;
+/* Animation for projects */
+.project {
+    position: relative; /* Ensure proper positioning of content within the project */
+    overflow: hidden; /* Hide overflow to prevent content from extending beyond the project */
+    animation: slideRightToLeft 60s linear infinite; /* Adjust duration and timing as needed */
 }
 
-#welcome-heading {
-    color: white;
-    position: absolute;
-    top: -50px; /* Adjusted position */
-    left: 50%;
-    transform: translateX(-50%);
-    animation: flashWelcome 2s linear infinite; /* Adjust duration and timing as needed */
+.project img:not(.nav-link img),
+.project video {
+    width: 100%; /* Ensure media fills the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent any spacing issues */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
 }
 
-@keyframes flashWelcome {
-    0%, 49.9% {
-        opacity: 0;
-    }
-    50%, 100% {
-        opacity: 1;
-    }
-/* Footer styles */
-footer {
-    /* Your existing styles */
-    color: blue;
-    animation: runFooter 10s linear infinite; /* Adjust duration and timing as needed */
-    font-size: 18px; /* Increase font size */
-    white-space: nowrap; /* Prevent text from wrapping */
-    position: absolute; /* Position the footer outside the viewport */
-    bottom: 0; /* Align the footer to the bottom */
-    left: 100%; /* Start the footer off the screen */
+/* Animation for projects */
+.project {
+    position: relative; /* Ensure proper positioning of content within the project */
+    overflow: hidden; /* Hide overflow to prevent content from extending beyond the project */
+    text-align: center; /* Align content to center */
+    max-width: 600px; /* Set maximum width */
+    margin: 0 auto; /* Center align the project container */
 }
 
-/* Inserted styles for the footer animation */
-@keyframes runFooter {
-    from {
-        left: 100%; /* Start off the screen */
-    }
-    to {
-        left: -100%; /* Move across the screen to the left */
-    }
+.project img:not(.nav-link img),
+.project video {
+    width: 100%; /* Ensure media fills the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Limit maximum width to 100% of container */
+    display: block; /* Display as block to center align */
+    margin: 0 auto; /* Center align the media within the container */
 }
